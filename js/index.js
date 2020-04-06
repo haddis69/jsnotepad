@@ -16,9 +16,6 @@ np.fontHandler = function(e) {
 $(function() {
   $menubar.show(np.menuData);
   $editor.show({
-    posHandler: function(row, col) {
-      $statusBar.setRowCol(row, col);
-    },
     contentHandler: function(isEmpty) {
       $menubar.enabled(1, 6, isEmpty);
     }
@@ -28,8 +25,6 @@ $(function() {
     style: np.fontStype,
     size: np.fontSize
   });
-  $statusBar.init();
-  $statusBar.display(false);
   var $app = $('body');
   $app.click(function() {
     $menubar.hideMenu();
